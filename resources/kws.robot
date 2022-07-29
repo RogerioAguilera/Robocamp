@@ -1,12 +1,6 @@
 *** Settings ***
-Documentation     Login
-Library     SeleniumLibrary
 
-*** Test Cases ***
-Login do Administrador
-    Acesso a página Login
-    Submeto minhas credenciais    admin@zepalheta.com.br     pwd123
-    Devo ver a área logada
+Library    SeleniumLibrary
 
 *** Keywords ***
 Acesso a página Login
@@ -22,4 +16,10 @@ Submeto minhas credenciais
 
 Devo ver a área logada
     Wait Until Page Contains      Aluguéis    5 
+    Close Browser
+
+Devo ver um toaster com a mensagem
+    [Arguments]    ${expect_message}
+
+    Wait Until Element Contains      css:div[type='error'] p    ${expect_message}
     Close Browser
