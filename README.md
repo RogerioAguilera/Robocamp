@@ -2,7 +2,6 @@
 
 Validar cenários web e api.
 
-
 # Subir projeto
 
  - [x] docker-compose up -d

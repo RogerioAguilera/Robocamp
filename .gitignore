@@ -30,3 +30,10 @@ __pycache__
 .settings
 .jython_cache
 .mypy_cache/
+
+# Poetry
+__pypackages__/
+.poetry/
+*.egg-info/
+*.egg/
+*.pyc
