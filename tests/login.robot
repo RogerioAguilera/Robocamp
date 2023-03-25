@@ -1,16 +1,13 @@
 *** Settings ***
-Documentation     Login
+Documentation            Fazer login no site Zé Palheta
+Library    SeleniumLibrary
 
-Resource    ../resources/base.robot
-Resource    ../resources/hooks.robot
-
-# executa uma ou mais Keywords após a execução de todos os steps de cada caso de teste
-
-Test Setup        Start Session
-Test Teardown    Finish Session
+Resource        ../resources/base.resource
+Suite Setup      Deve acessar o site
+Suite Teardown   Fechar o sistema
 
 *** Test Cases ***
-Login do Administrador
-    Acesso a página Login
-    Submeto minhas credenciais    admin@zepalheta.com.br     pwd123
-    Devo ver a área logada
+Testes da área de login
+    Inserir minhas credenciais com sucesso
+    Fechar o sistema
+
