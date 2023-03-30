@@ -1,90 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20230325 00:03:35.563" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20230329 20:23:29.840" rpa="false" schemaversion="3">
 <suite id="s1" name="Login" source="/home/rogeraguilera/Documentos/Robocamp/tests/login.robot">
-<kw name="Deve acessar o site" library="login-sucesso" type="SETUP">
+<kw name="Deve acessar o site" library="valida-login" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${BASE_URL}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230325 00:03:35.764" level="INFO">Opening browser 'chrome' to base url 'http://zepalheta-web:3000'.</msg>
-<status status="PASS" starttime="20230325 00:03:35.764" endtime="20230325 00:03:43.584"/>
+<msg timestamp="20230329 20:23:30.005" level="INFO">Opening browser 'chrome' to base url 'http://zepalheta-web:3000'.</msg>
+<status status="PASS" starttime="20230329 20:23:30.005" endtime="20230329 20:23:32.923"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230325 00:03:46.585" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230325 00:03:43.584" endtime="20230325 00:03:46.586"/>
+<msg timestamp="20230329 20:23:35.924" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230329 20:23:32.923" endtime="20230329 20:23:35.925"/>
 </kw>
-<status status="PASS" starttime="20230325 00:03:35.763" endtime="20230325 00:03:46.586"/>
+<status status="PASS" starttime="20230329 20:23:30.004" endtime="20230329 20:23:36.029"/>
 </kw>
-<test id="s1-t1" name="Testes da área de login" line="10">
-<kw name="Inserir minhas credenciais com sucesso" library="login-sucesso">
+<test id="s1-t1" name="CT002 - Teste de Login Inválido" line="15">
+<kw name="Inserir credencial de email não existente" library="valida-login">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${INPUT_EMAIL}</arg>
-<arg>${TXT_EMAIL}</arg>
+<arg>${TXT_EMAIL_INCORRECT}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230325 00:03:46.591" level="INFO">Typing text 'admin@zepalheta.com.br' into text field 'xpath=//input[@id='txtEmail']'.</msg>
-<status status="PASS" starttime="20230325 00:03:46.591" endtime="20230325 00:03:46.699"/>
+<msg timestamp="20230329 20:23:36.065" level="INFO">Typing text 'fail@zepalheta.com.br' into text field 'xpath=//input[@id='txtEmail']'.</msg>
+<status status="PASS" starttime="20230329 20:23:36.057" endtime="20230329 20:23:36.292"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>${INPUT_PASS}</arg>
 <arg>${TXT_PASS}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20230325 00:03:46.700" level="INFO">Typing password into text field 'xpath=//input[@placeholder='Senha']'.</msg>
-<msg timestamp="20230325 00:03:46.738" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20230325 00:03:46.780" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20230325 00:03:46.700" endtime="20230325 00:03:46.780"/>
+<msg timestamp="20230329 20:23:36.293" level="INFO">Typing password into text field 'xpath=//input[@placeholder='Senha']'.</msg>
+<msg timestamp="20230329 20:23:36.333" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230329 20:23:36.388" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230329 20:23:36.293" endtime="20230329 20:23:36.388"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230325 00:03:49.781" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230325 00:03:46.780" endtime="20230325 00:03:49.781"/>
+<msg timestamp="20230329 20:23:39.389" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230329 20:23:36.388" endtime="20230329 20:23:39.390"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${BTN_ENTRAR}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230325 00:03:49.782" level="INFO">Clicking button 'xpath=(//button[normalize-space()='Entrar'])[1]'.</msg>
-<status status="PASS" starttime="20230325 00:03:49.782" endtime="20230325 00:03:49.866"/>
+<msg timestamp="20230329 20:23:39.391" level="INFO">Clicking button 'xpath=(//button[normalize-space()='Entrar'])[1]'.</msg>
+<status status="PASS" starttime="20230329 20:23:39.390" endtime="20230329 20:23:39.639"/>
 </kw>
-<status status="PASS" starttime="20230325 00:03:46.590" endtime="20230325 00:03:49.867"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230329 20:23:42.640" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230329 20:23:39.639" endtime="20230329 20:23:42.640"/>
 </kw>
-<kw name="Fechar o sistema" library="login-sucesso">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${TOASTER_FAIL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230329 20:23:42.641" level="INFO">Clicking element 'xpath=//div[@type='error']'.</msg>
+<status status="PASS" starttime="20230329 20:23:42.640" endtime="20230329 20:23:42.689"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230329 20:23:46.690" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230329 20:23:42.690" endtime="20230329 20:23:46.690"/>
+</kw>
+<status status="PASS" starttime="20230329 20:23:36.045" endtime="20230329 20:23:46.691"/>
+</kw>
+<kw name="Fechar o sistema" library="valida-login">
 <kw name="Sleep" library="BuiltIn">
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230325 00:03:54.869" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230325 00:03:49.869" endtime="20230325 00:03:54.870"/>
+<msg timestamp="20230329 20:23:51.693" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230329 20:23:46.692" endtime="20230329 20:23:51.694"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230325 00:03:54.870" endtime="20230325 00:03:54.931"/>
+<status status="PASS" starttime="20230329 20:23:51.694" endtime="20230329 20:23:51.797"/>
 </kw>
-<status status="PASS" starttime="20230325 00:03:49.868" endtime="20230325 00:03:54.932"/>
+<status status="PASS" starttime="20230329 20:23:46.692" endtime="20230329 20:23:51.798"/>
 </kw>
-<status status="PASS" starttime="20230325 00:03:46.588" endtime="20230325 00:03:54.932"/>
+<tag>PassIncorrect</tag>
+<status status="PASS" starttime="20230329 20:23:36.041" endtime="20230329 20:23:51.798"/>
 </test>
-<kw name="Fechar o sistema" library="login-sucesso" type="TEARDOWN">
+<kw name="Fechar o sistema" library="valida-login" type="TEARDOWN">
 <kw name="Sleep" library="BuiltIn">
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230325 00:03:59.934" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230325 00:03:54.933" endtime="20230325 00:03:59.934"/>
+<msg timestamp="20230329 20:23:56.800" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230329 20:23:51.800" endtime="20230329 20:23:56.801"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230325 00:03:59.934" endtime="20230325 00:03:59.935"/>
+<status status="PASS" starttime="20230329 20:23:56.801" endtime="20230329 20:23:56.802"/>
 </kw>
-<status status="PASS" starttime="20230325 00:03:54.933" endtime="20230325 00:03:59.935"/>
+<status status="PASS" starttime="20230329 20:23:51.800" endtime="20230329 20:23:56.802"/>
 </kw>
 <doc>Fazer login no site Zé Palheta</doc>
-<status status="PASS" starttime="20230325 00:03:35.564" endtime="20230325 00:03:59.935"/>
+<status status="PASS" starttime="20230329 20:23:29.841" endtime="20230329 20:23:56.802"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">PassIncorrect</stat>
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="Login">Login</stat>

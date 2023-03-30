@@ -37,3 +37,7 @@ __pypackages__/
 *.egg-info/
 *.egg/
 *.pyc
+
+# MD
+
+plano_teste_login.md
