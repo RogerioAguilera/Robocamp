@@ -1,30 +1,33 @@
 name: Testes Automatizados
-'on':
+
+on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
+    branches: [ main ]
+
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout do código-fonte
         uses: actions/checkout@v2
+
       - name: Configuração do ambiente Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
+
       - name: Instalação das dependências do projeto
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          sudo apt-get update
-          sudo apt-get install -y docker.io
-          docker-compose build
-      - name: Run end-to-end tests
-        run: ./e2e.sh
+
+      - name: Execução dos testes com Robot Framework
+        run: |
+           robot -d logs tests
+
       - name: Upload dos resultados dos testes
         uses: actions/upload-artifact@v2
         with:
